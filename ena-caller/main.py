@@ -5,6 +5,7 @@ import json
 import requests
 import tripletSearcher
 
+
 def call_ena_api(row):
     uuid = row[22]
     cleaned_uuid = (uuid.replace('DNA-', '')
@@ -15,7 +16,7 @@ def call_ena_api(row):
                     .replace('DSM ', '').strip())
     try:
         response = requests.get(
-        f'https://www.ebi.ac.uk/ena/portal/api/search?result=sequence&fields=all&limit=10&format=json&query=specimen_voucher="${cleaned_uuid}"')
+            f'https://www.ebi.ac.uk/ena/portal/api/search?result=sequence&fields=all&limit=10&format=json&query=specimen_voucher="${cleaned_uuid}"')
         response_json = json.loads(response.content)
         if len(response_json) != 0:
             print(json.dumps(response_json))
@@ -47,6 +48,7 @@ def write_result_to_file(writer, row, result):
                 'ena_collector': result_row['collected_by']
             }
             writer.writerow(result)
+            return result
 
 
 def main_method():
@@ -65,7 +67,9 @@ def main_method():
                 elif i < 10000:
                     result = process_row(row)
                     if result:
-                        write_result_to_file(writer, row, result)
+                        r = write_result_to_file(writer, row, result)
+                        if r:
+                            tripletSearcher.annotate_triplet(r, row)
                     else:
                         tripletSearcher.search_triplets(row, writer)
 
