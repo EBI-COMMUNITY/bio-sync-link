@@ -88,12 +88,15 @@ def call_ena_api_with_accession(result, accession_numbers):
 
 
 def write_unmatched_accession(row, writer_invalid_accession):
-    return None
-
-
-# 'ggbn_guid', 'ggbn_unitid', 'ggbn_scietific_name',
-# 'ggbn_country', 'ggbn_collection_date',
-# 'ggbn_collector'
+    result = {
+        'ggbn_guid': row[19],
+        'ggbn_unitid': row[22],
+        'ggbn_scietific_name': row[23],
+        'ggbn_country': row[8],
+        'ggbn_collection_date': row[4],
+        'ggbn_collector': row[6]
+    }
+    writer_invalid_accession.writerow(result)
 
 
 def process_row(row, writer_invalid_accession):
@@ -102,9 +105,9 @@ def process_row(row, writer_invalid_accession):
     if len(accession_numbers) > 0 and accession_numbers[0] != '\\N':
         logging.info(f'This record has accession_numbers {accession_numbers} checking accession numbers')
         result = call_ena_with_accession(accession_numbers)
-        if not result:
+        if not result and accession_numbers[0] != '\\N':
             write_unmatched_accession(row, writer_invalid_accession)
-        if len(accession_numbers) != len(result):
+        elif len(accession_numbers) != len(result) and accession_numbers[0] != '\\N':
             for number in accession_numbers:
                 if number not in result:
                     logging.info(f'Accession number {number} not found in ENA')
@@ -129,8 +132,7 @@ def write_result_to_file(writer, row, result):
             'ena_collection_date': result_row['collection_date'],
             'ggbn_collector': row[6],
             'ena_collector': result_row['collected_by'],
-            'ena_specimen_voucher': result_row['specimen_voucher'],
-            'ena_id': result_row['sequence_accession'],
+            'ena_id': pick_correct_accession_field(result_row),
             'ena_api': result_row['api'],
             'gbbn_type': row[2],
             'ggbn_guid': row[19],
@@ -142,14 +144,24 @@ def write_result_to_file(writer, row, result):
                 result['tax_match'] = 'True'
         if 'tax_match' not in result:
             result['tax_match'] = 'False'
-        if result['source'] == 'uuid' and result['tax_match'] == 'False' or result['gbbn_type'] not in ['DNA', 'Tissue',
-                                                                                                        'specimen',
-                                                                                                        'culture',
-                                                                                                        'environmental sample']:
+        if result['source'] == 'uuid' and result['tax_match'] == 'False':
             logging.info(f'Skipping row as the tax match is false {result}')
+        elif result['gbbn_type'].lower() not in ['dna', 'tissue',
+                                                 'specimen',
+                                                 'culture',
+                                                 'environmental sample']:
+            logging.info(f'Skipping row as the type is not accepted {result}')
         else:
             writer.writerow(result)
             return result
+
+
+def pick_correct_accession_field(result_row):
+    value = result_row.get('sequence_accession')
+    if value:
+        return value
+    else:
+        return result_row.get('sample_accession')
 
 
 def check_hit(result_row):
@@ -164,16 +176,16 @@ def check_hit(result_row):
 
 
 def main_method():
-    with open('dump_100k.csv', 'r', encoding='ISO-8859-1') as csvfile:
-        datareader = csv.reader(csvfile, delimiter=';', quotechar='"')
-        with open('output.csv', 'w', newline='') as outputfile, open("annotationOutput.csv", 'w', newline='') as annotation_file:
+    with open('new-full-dump.csv', 'r', encoding='ISO-8859-1') as csvfile:
+        datareader = csv.reader(csvfile, delimiter='\t', quotechar='"')
+        with open('output.csv', 'w', newline='') as outputfile:
             writer = csv.DictWriter(outputfile, delimiter=',', quotechar='"',
                                     fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on',
                                                 'ggbn_scietific_name',
                                                 'ena_scientific_name', 'ggbn_country', 'ena_country',
                                                 'ggbn_collection_date', 'ena_collection_date', 'ggbn_collector',
-                                                'ena_collector', 'ena_specimen_voucher', 'ena_id', 'gbbn_type', 'ggbn_guid', 'ggbn_id','ena_api'])
-            annotation_writer = csv.writer(annotation_file)
+                                                'ena_collector', 'ena_id', 'ggbn_guid', 'ena_api', 'gbbn_type',
+                                                'ggbn_guid', 'ggbn_id'])
             with open('unmatched-accession.csv', 'w', newline='') as unmatched_accession_outputfile:
                 writer_invalid_accession = csv.DictWriter(unmatched_accession_outputfile, delimiter=',', quotechar='"',
                                                           fieldnames=['ggbn_guid', 'ggbn_unitid', 'ggbn_scietific_name',
@@ -185,7 +197,7 @@ def main_method():
                 for i, row in enumerate(datareader):
                     if i == 0:
                         continue
-                    elif i < 10000:
+                    elif i < int(os.environ.get('RECORD_LIMIT')):
                         # executor.submit(process_row_in_ggbn, row, writer, writer_invalid_accession)
                         process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer)
                     else:
