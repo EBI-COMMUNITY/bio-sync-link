@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ggbn-ena-mapper
+spec:
+  template:
+    spec:
+      containers:
+        - name: ggbn-ena-mapper
+          image: public.ecr.aws/dissco/ggbn-ena-mapper
+          env:
+            - name: ACCESS_KEY
+              value:
+            - name: SECRET_KEY
+              value:
+            - name: RECORD_LIMIT
+              value: "500000"
+      restartPolicy: Never
