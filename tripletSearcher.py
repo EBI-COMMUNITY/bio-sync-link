@@ -1,11 +1,14 @@
 import csv
 import requests
 import re
+import logging
 
 sah_endpoint = 'https://www.ebi.ac.uk/ena/sah/api/'
 ena_endpoint = 'https://www.ebi.ac.uk/ena/portal/api/search?result=sequence&fields=all&limit=10&format=json&query=specimen_voucher='
 annotation_endpoint = 'https://www.ebi.ac.uk/ena/clearinghouse/api/curations'
 institution_dict = {}
+
+logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
 
 
 def search_triplets(row, writer):
@@ -41,22 +44,50 @@ def search_triplets(row, writer):
 
 
 def write_positive_match(result, row, writer):
-    if row[23] == result.get('scientific_name'):
-        write_row = {
+    for result_row in result:
+        result = {
+            'source': result_row['source'],
             'ggbn_unitid': row[22],
-            'ena_specimen_voucher': result.get('specimen_voucher'),
+            'ena_hit_on': check_hit(result_row),
             'ggbn_scietific_name': row[23],
-            'ena_scientific_name': result.get('scientific_name'),
+            'ena_scientific_name': result_row['scientific_name'],
             'ggbn_country': row[8],
-            'ena_country': result.get('country'),
+            'ena_country': result_row['country'],
             'ggbn_collection_date': row[4],
-            'ena_collection_date': result.get('collection_date'),
+            'ena_collection_date': result_row['collection_date'],
             'ggbn_collector': row[6],
-            'ena_collector': result.get('collected_by')
+            'ena_collector': result_row['collected_by'],
+            'ena_id': result_row['sequence_accession'],
+            'ena_api': result_row['api'],
+            'gbbn_type': row[2],
+            'ggbn_guid': row[19],
+            'ggbn_id': row[0]
         }
-        print("result found: ", write_row)
-        writer.writerow(write_row)
-        return write_row
+        split_scientific_name_ena = row[23].split(' ')
+        for name_part in split_scientific_name_ena:
+            if name_part in result_row['scientific_name']:
+                result['tax_match'] = 'True'
+        if 'tax_match' not in result:
+            result['tax_match'] = 'False'
+        if result['source'] == 'uuid' and result['tax_match'] == 'False' or result['gbbn_type'] not in ['DNA', 'Tissue',
+                                                                                                        'specimen',
+                                                                                                        'culture',
+                                                                                                        'environmental sample']:
+            logging.info(f'Skipping row as the tax match is false {result}')
+        else:
+            writer.writerow(result)
+            return result
+
+
+def check_hit(result_row):
+    if result_row['specimen_voucher']:
+        return result_row['specimen_voucher']
+    if result_row['bio_material']:
+        return result_row['bio_material']
+    if result_row['culture_collection']:
+        return result_row['culture_collection']
+    if result_row['isolation_source']:
+        return result_row['isolation_source']
 
 
 def validate_triplet(triplet):
@@ -93,7 +124,7 @@ def assemble_triplet(institution, collection, unit, delimiter):
 def set_institution_dict():
     global institution_dict
     if len(institution_dict) == 0:
-        with open("../institutions.csv", 'r') as file:
+        with open("institutions.csv", 'r') as file:
             reader = csv.reader(file)
             first = True
             for row in reader:
@@ -118,7 +149,7 @@ def translate_institution(institution):
 
 
 def read_csv():
-    with open('../ena-caller/dump_100k.csv', 'r', encoding='ISO-8859-1') as f:
+    with open('dump_100k.csv', 'r', encoding='ISO-8859-1') as f:
         reader = csv.reader(f, delimiter=';')
         for row in reader:
             yield row
@@ -138,7 +169,7 @@ def get_collection_codes(institution_ena):
     return col_list
 
 
-def annotate_triplet(result, ggbn_row):
+def annotate_triplet(result, ggbn_row, annotation_writer):
     global institution_dict
     set_institution_dict()
     voucher_id = result.get('ena_specimen_voucher')
@@ -150,16 +181,20 @@ def annotate_triplet(result, ggbn_row):
     if not col_list:
         triplet = assemble_triplet(ena_institution, '', voucher_id, ":")
         print("triplet for this specimen should be annotated as: ", triplet)
-        send_annotation_request(triplet, voucher_id)
+        write_annotation_to_file(triplet, voucher_id, annotation_writer)
     elif len(col_list) == 1:
         triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":")
         print("triplet for this specimen should be annotated as: ", triplet)
-        send_annotation_request(triplet, voucher_id)
+        write_annotation_to_file(triplet, voucher_id, annotation_writer)
     else:
         print("** too many collection codes!", col_list)
 
 
-def send_annotation_request(triplet, voucher_id):
+def write_annotation_to_file(triplet, voucher_id, annotation_writer):
+    annotation_writer.writeRow(voucher_id, triplet, get_annotation_request(triplet, voucher_id))
+
+
+def get_annotation_request(triplet, voucher_id):
     params = {
         "recordType": "sequence",
         "record_id": voucher_id,
@@ -173,6 +208,7 @@ def send_annotation_request(triplet, voucher_id):
         "providerName": "BioSyncLink",
         "assertionAdditionalInfo": "This assertion was made by the Bio-Sync-Link project, Elixir Biohackathon 2023",
     }
+    return params
     # requests.post(annotation_endpoint, json=params)
 
 
@@ -183,11 +219,9 @@ def remove_institution_from_voucher_id(voucher_id, ena_institution):
 
 
 def is_triplet(ena_voucher):
-    pattern = r'^(\w+):(\w+)(?::(\w+))?$' # Find items either {institution}:{id} or {institution}:{collection}:{id}
+    pattern = r'^(\w+):(\w+)(?::(\w+))?$'  # Find items either {institution}:{id} or {institution}:{collection}:{id}
     match = re.match(pattern, ena_voucher)
     if match:
         return True
     else:
         return False
-
-

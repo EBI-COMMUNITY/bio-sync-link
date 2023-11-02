@@ -52,7 +52,7 @@ def write_result_to_file(writer, row, result):
 
 
 def main_method():
-    with open('dump_100k.csv', 'r', encoding='ISO-8859-1') as csvfile:
+    with open('../dump_100k.csv', 'r', encoding='ISO-8859-1') as csvfile:
         datareader = csv.reader(csvfile, delimiter=';', quotechar='"')
         with open('0.4-switch-to-comma.csv', 'w', newline='') as outputfile:
             writer = csv.DictWriter(outputfile, delimiter=',', quotechar='"',
