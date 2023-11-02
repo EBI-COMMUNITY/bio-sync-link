@@ -13,10 +13,10 @@ logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=l
 
 
 def search_triplets(row, writer):
-    col_triplet, space_triplet = build_searchable_triplet_from_unit_id(row)
+    col_triplet, space_triplet = build_searchable_triplet(row, True)
     if col_triplet:
         if validate_triplet(col_triplet):
-            logging.debug("This record has a triplet: " + col_triplet)
+            logging.info("No match with accession/uuid found. checking triplet " + col_triplet)
             try:
                 results = requests.get(ena_endpoint + '"' + col_triplet + '"').json()
             except Exception:
@@ -27,10 +27,11 @@ def search_triplets(row, writer):
             for result in results:
                 if result.get('specimen_voucher') == col_triplet or result.get('specimen_voucher') == space_triplet:
                     return write_positive_match(result, row, writer)
+            logging.info("No match found for dwc triplet " + col_triplet)
         else:
-            col_doublet, space_doublet = build_searchable_triplet_from_unit_id(row)
+            col_doublet, space_doublet = build_searchable_triplet(row, False)
             if validate_triplet(col_doublet):
-                print("This record has a triplet: ", col_doublet)
+                logging.info("No match with accession/uuid found. checking triplet " + col_doublet)
                 try:
                     results = requests.get(ena_endpoint + '"' + col_doublet + '"').json()
                 except Exception:
@@ -41,7 +42,7 @@ def search_triplets(row, writer):
                 for result in results:
                     if result.get('specimen_voucher') == col_doublet or result.get('specimen_voucher') == space_doublet:
                         return write_positive_match(result, row, writer)
-        logging.info("No match found for dwc triplet" + col_triplet)
+            logging.info("No match found for dwc triplet " + col_triplet + " or " + col_doublet)
 
 
 def write_positive_match(result, row, writer):
@@ -76,6 +77,7 @@ def write_positive_match(result, row, writer):
                                                                                                         'environmental sample']:
             logging.info(f'Skipping row as the tax match is false {result}')
         else:
+            logging.info("A match has been found with DWC triplet" + str(result))
             writer.writerow(result)
             return result
 
@@ -104,20 +106,28 @@ def validate_triplet(triplet):
     return r["success"]
 
 
-def build_searchable_triplet_from_unit_id(row):
+def build_searchable_triplet(row, include_collection):
     institution = translate_institution(row[20].replace('"', '').replace('\\N', ''))
-    collection = row[21].replace('"', '').replace('\\N', '')
+    if not institution:
+        return '', ''
+    collection = False
+    if include_collection:
+        collections = get_collection_codes(institution)
+        if len(collections) == 1:
+            collection = collections[0]
+    if not collection:
+        collection = row[21].replace('"', '').replace('\\N', '')
     unit = remove_institution_from_voucher_id(row[22].replace('"', '').replace('\\N', ''), institution)
-    return (assemble_triplet(institution, collection, unit, ":"),
-            assemble_triplet(institution, collection, unit, " "))
+    return (assemble_triplet(institution, collection, unit, ":", include_collection),
+            assemble_triplet(institution, collection, unit, " ", include_collection))
 
 
-def assemble_triplet(institution, collection, unit, delimiter):
+def assemble_triplet(institution, collection, unit, delimiter, include_collection):
     institution = translate_institution(institution.replace('\\N', ''))
     if not institution or not unit:
         return ''
 
-    if collection:
+    if collection and include_collection:
         return institution + delimiter + collection + delimiter + unit
     return institution + delimiter + unit
 
@@ -144,8 +154,6 @@ def translate_institution(institution):
     translated = institution_dict.get(institution)
     if institution not in institution_dict or translated == '#N/A':
         return ''
-    if institution != translated:
-        print(institution, " -> ", translated)
     return institution_dict.get(institution)
 
 
@@ -162,6 +170,8 @@ def get_collection_codes(institution_ena):
     except Exception:
         print(f'Error while calling ENA SAH API for {institution_ena}')
         return []
+    if not r or not r.get("institutions"):
+        print(r, " ", institution_ena)
     collections = r.get("institutions")[0].get("collections")  # this endpoint will return unique institutions
     col_list = []
     for collection in collections:
@@ -180,12 +190,12 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
     voucher_id = remove_institution_from_voucher_id(voucher_id, ena_institution)
     col_list = get_collection_codes(ena_institution)
     if not col_list:
-        triplet = assemble_triplet(ena_institution, '', voucher_id, ":")
-        logging.info("triplet for this specimen should be annotated as: " + triplet)
+        triplet = assemble_triplet(ena_institution, '', voucher_id, ":", False)
+        logging.info("Voucher ID for this specimen should be annotated as triplet: " + triplet)
         write_annotation_to_file(triplet, voucher_id, annotation_writer)
     elif len(col_list) == 1:
-        triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":")
-        logging.info("triplet for this specimen should be annotated as: ", triplet)
+        triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":", True)
+        logging.info("Voucher ID for this specimen should be annotated as triplet: ", triplet)
         write_annotation_to_file(triplet, voucher_id, annotation_writer)
     else:
         logging.warning("** too many collection codes!" + str(col_list))

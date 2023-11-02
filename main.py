@@ -199,9 +199,10 @@ def main_method():
 
 def process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer):
     result = process_row(row, writer_invalid_accession)
+    r = False
     if result:
         r = write_result_to_file(writer, row, result)
-    else:
+    if not r:
         r = tripletManager.search_triplets(row, writer)
     if r:
         tripletManager.annotate_triplet(r, row, annotation_writer)
