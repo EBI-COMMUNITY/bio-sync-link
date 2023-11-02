@@ -68,11 +68,10 @@ def main_method():
                     result = process_row(row)
                     if result:
                         r = write_result_to_file(writer, row, result)
-                        if r:
-                            tripletSearcher.annotate_triplet(r, row)
                     else:
-                        tripletSearcher.search_triplets(row, writer)
-
+                        r = tripletSearcher.search_triplets(row, writer)
+                    if r:
+                        tripletSearcher.annotate_triplet(r, row)
                 else:
                     break
 
