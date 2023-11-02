@@ -1,4 +1,6 @@
 import csv
+import os
+
 import requests
 import re
 import logging
@@ -15,11 +17,11 @@ def search_triplets(row, writer):
     col_triplet, space_triplet = build_searchable_triplet_from_unit_id(row)
     if col_triplet:
         if validate_triplet(col_triplet):
-            print("This record has a triplet: ", col_triplet)
+            logging.debug("This record has a triplet: " + col_triplet)
             try:
                 results = requests.get(ena_endpoint + '"' + col_triplet + '"').json()
             except Exception:
-                print(f'Error while calling ENA API for {col_triplet}')
+                logging.error(f'Error while calling ENA API for {col_triplet}')
                 return
             if len(results) == 1:
                 return write_positive_match(results[0], row, writer)
@@ -33,14 +35,14 @@ def search_triplets(row, writer):
                 try:
                     results = requests.get(ena_endpoint + '"' + col_doublet + '"').json()
                 except Exception:
-                    print(f'Error while calling ENA API for {col_doublet}')
+                    logging.error(f'Error while calling ENA API for {col_doublet}')
                     return
                 if len(results) == 1:
                     return write_positive_match(results[0], row, writer)
                 for result in results:
                     if result.get('specimen_voucher') == col_doublet or result.get('specimen_voucher') == space_doublet:
                         return write_positive_match(result, row, writer)
-        print("\tNo match found for triplet")
+        logging.info("No match found for dwc triplet" + col_triplet)
 
 
 def write_positive_match(result, row, writer):
@@ -165,7 +167,7 @@ def get_collection_codes(institution_ena):
     col_list = []
     for collection in collections:
         col_list.append(collection.get("collectionCode"))
-    print(institution_ena, " has collections", col_list)
+    logging.debug(institution_ena, " has collections", col_list)
     return col_list
 
 
@@ -180,18 +182,19 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
     col_list = get_collection_codes(ena_institution)
     if not col_list:
         triplet = assemble_triplet(ena_institution, '', voucher_id, ":")
-        print("triplet for this specimen should be annotated as: ", triplet)
+        logging.info("triplet for this specimen should be annotated as: " + triplet)
         write_annotation_to_file(triplet, voucher_id, annotation_writer)
     elif len(col_list) == 1:
         triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":")
-        print("triplet for this specimen should be annotated as: ", triplet)
+        logging.info("triplet for this specimen should be annotated as: ", triplet)
         write_annotation_to_file(triplet, voucher_id, annotation_writer)
     else:
-        print("** too many collection codes!", col_list)
+        logging.warning("** too many collection codes!" + str(col_list))
 
 
 def write_annotation_to_file(triplet, voucher_id, annotation_writer):
-    annotation_writer.writeRow(voucher_id, triplet, get_annotation_request(triplet, voucher_id))
+    request = get_annotation_request(triplet, voucher_id)
+    annotation_writer.writerow([voucher_id, triplet, request])
 
 
 def get_annotation_request(triplet, voucher_id):
@@ -208,7 +211,7 @@ def get_annotation_request(triplet, voucher_id):
         "providerName": "BioSyncLink",
         "assertionAdditionalInfo": "This assertion was made by the Bio-Sync-Link project, Elixir Biohackathon 2023",
     }
-    return params
+    return str(params)
     # requests.post(annotation_endpoint, json=params)
 
 
