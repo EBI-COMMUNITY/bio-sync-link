@@ -1,5 +1,4 @@
 import csv
-import os
 
 import requests
 import re
@@ -51,7 +50,7 @@ def write_positive_match(result, row, writer):
             'source': result_row['source'],
             'ggbn_unitid': row[22],
             'ena_hit_on': check_hit(result_row),
-            'ggbn_scietific_name': row[23],
+            'ggbn_scientific_name': row[23],
             'ena_scientific_name': result_row['scientific_name'],
             'ggbn_country': row[8],
             'ena_country': result_row['country'],
