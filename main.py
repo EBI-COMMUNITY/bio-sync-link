@@ -12,6 +12,7 @@ import requests
 import tripletManager
 
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
+os.environ['RECORD_LIMIT'] = '10000'
 
 
 def call_ena_api(row):
@@ -124,7 +125,8 @@ def write_result_to_file(writer, row, result):
             'source': result_row['source'],
             'ggbn_unitid': row[22],
             'ena_hit_on': check_hit(result_row),
-            'ggbn_scietific_name': row[23],
+            'ena_specimen_voucher': result_row['specimen_voucher'],
+            'ggbn_scientific_name': row[23],
             'ena_scientific_name': result_row['scientific_name'],
             'ggbn_country': row[8],
             'ena_country': result_row['country'],
@@ -178,14 +180,16 @@ def check_hit(result_row):
 def main_method():
     with open('new-full-dump.csv', 'r', encoding='ISO-8859-1') as csvfile:
         datareader = csv.reader(csvfile, delimiter='\t', quotechar='"')
-        with open('output.csv', 'w', newline='') as outputfile:
+        with open('output.csv', 'w', newline='') as outputfile, open('annotationOutput.csv', 'w',
+                                                                     newline='') as annotationoutfile:
             writer = csv.DictWriter(outputfile, delimiter=',', quotechar='"',
-                                    fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on',
-                                                'ggbn_scietific_name',
+                                    fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on', 'ena_specimen_voucher',
+                                                'ggbn_scientific_name',
                                                 'ena_scientific_name', 'ggbn_country', 'ena_country',
                                                 'ggbn_collection_date', 'ena_collection_date', 'ggbn_collector',
                                                 'ena_collector', 'ena_id', 'ggbn_guid', 'ena_api', 'gbbn_type',
                                                 'ggbn_guid', 'ggbn_id'])
+            annotation_writer = csv.writer(annotationoutfile)
             with open('unmatched-accession.csv', 'w', newline='') as unmatched_accession_outputfile:
                 writer_invalid_accession = csv.DictWriter(unmatched_accession_outputfile, delimiter=',', quotechar='"',
                                                           fieldnames=['ggbn_guid', 'ggbn_unitid', 'ggbn_scietific_name',
@@ -214,8 +218,10 @@ def process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer
     r = False
     if result:
         r = write_result_to_file(writer, row, result)
+        source = "main"
     if not r:
-        r = tripletManager.search_triplets(row, writer)
+        r = tripletManager.call_ena_api_triplets(row, writer)
+        source = "triplet"
     if r:
         tripletManager.annotate_triplet(r, row, annotation_writer)
 

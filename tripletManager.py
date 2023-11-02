@@ -12,45 +12,63 @@ institution_dict = {}
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
 
 
-def search_triplets(row, writer):
+def call_ena_api_triplets(row, writer):
+    endpoint = 'sequence'
+    results = search_triplets(row, endpoint)
+    if not results:
+        endpoint = 'sample'
+        results = search_triplets(row, endpoint)
+    if results:
+        return write_positive_match(results, row, writer, endpoint)
+
+
+def search_triplets(row, endpoint):
     col_triplet, space_triplet = build_searchable_triplet(row, True)
-    if col_triplet:
-        if validate_triplet(col_triplet):
-            logging.info("No match with accession/uuid found. checking triplet " + col_triplet)
+    if col_triplet and validate_triplet(col_triplet):
+        logging.info("No match with accession/uuid found. checking triplet " + col_triplet)
+        results = None
+        try:
+            results = requests.get(build_ena_request(col_triplet, space_triplet, endpoint)).json()
+        except Exception:
+            logging.error(f'Error while calling ENA API for triplet {col_triplet}')
+            return
+        if results and len(results) > 0:
+            return results
+    else:
+        col_doublet, space_doublet = build_searchable_triplet(row, False)
+        if col_doublet and validate_triplet(col_doublet):
+            logging.info("No match with accession/uuid found. checking triplet " + col_doublet)
+            results = None
             try:
-                results = requests.get(ena_endpoint + '"' + col_triplet + '"').json()
+                results = requests.get(build_ena_request(col_doublet, space_doublet, endpoint)).json()
             except Exception:
-                logging.error(f'Error while calling ENA API for {col_triplet}')
+                logging.error(f'Error while calling ENA API for {col_doublet}')
                 return
-            if len(results) == 1:
-                return write_positive_match(results[0], row, writer)
-            for result in results:
-                if result.get('specimen_voucher') == col_triplet or result.get('specimen_voucher') == space_triplet:
-                    return write_positive_match(result, row, writer)
-            logging.info("No match found for dwc triplet " + col_triplet)
-        else:
-            col_doublet, space_doublet = build_searchable_triplet(row, False)
-            if validate_triplet(col_doublet):
-                logging.info("No match with accession/uuid found. checking triplet " + col_doublet)
-                try:
-                    results = requests.get(ena_endpoint + '"' + col_doublet + '"').json()
-                except Exception:
-                    logging.error(f'Error while calling ENA API for {col_doublet}')
-                    return
-                if len(results) == 1:
-                    return write_positive_match(results[0], row, writer)
-                for result in results:
-                    if result.get('specimen_voucher') == col_doublet or result.get('specimen_voucher') == space_doublet:
-                        return write_positive_match(result, row, writer)
-            logging.info("No match found for dwc triplet " + col_triplet + " or " + col_doublet)
+            if results and len(results) > 0:
+                return results
+            else:
+                logging.info("No match found for dwc triplet " + col_triplet + " or " + col_doublet)
 
 
-def write_positive_match(result, row, writer):
+def build_ena_request(col_triplet, space_triplet, endpoint):
+    return (f'https://www.ebi.ac.uk/ena/portal/api/search?result={endpoint}&fields=all&limit=10&format=json&'
+            f'query=specimen_voucher="{col_triplet}" '
+            f'OR bio_material="{col_triplet}" '
+            f'OR culture_collection="{col_triplet}" '
+            f'OR isolation_source="{col_triplet}" '
+            f'OR specimen_voucher="{space_triplet}" '
+            f'OR bio_material="{space_triplet}" '
+            f'OR culture_collection="{space_triplet}" '
+            f'OR isolation_source="{space_triplet}"')
+
+
+def write_positive_match(result, row, writer, endpoint):
     for result_row in result:
         result = {
-            'source': result_row['source'],
+            'source': 'triplet',
             'ggbn_unitid': row[22],
             'ena_hit_on': check_hit(result_row),
+            'ena_specimen_voucher': result_row['specimen_voucher'],
             'ggbn_scientific_name': row[23],
             'ena_scientific_name': result_row['scientific_name'],
             'ggbn_country': row[8],
@@ -59,8 +77,8 @@ def write_positive_match(result, row, writer):
             'ena_collection_date': result_row['collection_date'],
             'ggbn_collector': row[6],
             'ena_collector': result_row['collected_by'],
-            'ena_id': result_row['sequence_accession'],
-            'ena_api': result_row['api'],
+            'ena_id': pick_correct_accession_field(result_row),
+            'ena_api': endpoint,
             'gbbn_type': row[2],
             'ggbn_guid': row[19],
             'ggbn_id': row[0]
@@ -82,6 +100,14 @@ def write_positive_match(result, row, writer):
             return result
 
 
+def pick_correct_accession_field(result_row):
+    value = result_row.get('sequence_accession')
+    if value:
+        return value
+    else:
+        return result_row.get('sample_accession')
+
+
 def check_hit(result_row):
     if result_row['specimen_voucher']:
         return result_row['specimen_voucher']
@@ -101,7 +127,7 @@ def validate_triplet(triplet):
     try:
         r = requests.get(sah_endpoint + 'validate', params).json()
     except Exception:
-        print(f'Error while calling ENA SAH API for {triplet}')
+        logging.info(f'Error while calling ENA SAH API for {triplet}')
         return
     return r["success"]
 
@@ -232,8 +258,40 @@ def remove_institution_from_voucher_id(voucher_id, ena_institution):
 
 def is_triplet(ena_voucher):
     pattern = r'^(\w+):(\w+)(?::(\w+))?$'  # Find items either {institution}:{id} or {institution}:{collection}:{id}
+    if not ena_voucher:
+        print("")
     match = re.match(pattern, ena_voucher)
     if match:
         return True
     else:
         return False
+
+
+def triplet_workflow():
+    with open('new-full-dump.csv', 'r', encoding='ISO-8859-1') as csvfile:
+        datareader = csv.reader(csvfile, delimiter='\t', quotechar='"')
+        with open("tripletOutput.csv", 'w', newline='') as file, open('annotationOutput.csv', 'w',
+                                                                      newline='') as annotationoutfile:
+            annotation_writer = csv.writer(annotationoutfile)
+            writer = csv.DictWriter(file, delimiter=',', quotechar='"',
+                                    fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on',
+                                                'ena_specimen_voucher',
+                                                'ggbn_scientific_name',
+                                                'ena_scientific_name', 'ggbn_country', 'ena_country',
+                                                'ggbn_collection_date', 'ena_collection_date', 'ggbn_collector',
+                                                'ena_collector', 'ena_id', 'ggbn_guid', 'ena_api', 'gbbn_type',
+                                                'ggbn_guid', 'ggbn_id'])
+            writer.writeheader()
+            for i, row in enumerate(datareader):
+                if i == 0:
+                    continue
+                elif i < 1000:
+                    triplet_match = call_ena_api_triplets(row, writer)
+                    if triplet_match:
+                        annotate_triplet(triplet_match, row, annotation_writer)
+                else:
+                    break
+
+
+if __name__ == '__main__':
+    triplet_workflow()
