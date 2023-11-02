@@ -224,7 +224,9 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
         logging.info("Voucher ID for this specimen should be annotated as triplet: ", triplet)
         write_annotation_to_file(triplet, voucher_id, annotation_writer)
     else:
-        logging.warning("** too many collection codes!" + str(col_list))
+        logging.warning("Too many collection codes to construct triplet" + str(col_list))
+        annotation_writer.writerow([voucher_id, "",
+                                    f'"Unable to construct triplet. Institution {ena_institution} has too many collections {col_list}'])
 
 
 def write_annotation_to_file(triplet, voucher_id, annotation_writer):
