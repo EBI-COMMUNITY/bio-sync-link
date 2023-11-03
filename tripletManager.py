@@ -10,7 +10,7 @@ annotation_endpoint = 'https://www.ebi.ac.uk/ena/clearinghouse/api/curations'
 institution_dict = {}
 
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
-
+send_to_api = False
 
 def call_ena_api_triplets(row, writer):
     endpoint = 'sequence'
@@ -218,11 +218,16 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
     if not col_list:
         triplet = assemble_triplet(ena_institution, '', voucher_id, ":", False)
         logging.info("Voucher ID for this specimen should be annotated as triplet: " + triplet)
-        write_annotation_to_file(triplet, voucher_id, annotation_writer)
+        request = write_annotation_to_file(triplet, voucher_id, annotation_writer)
+        if send_to_api:
+            requests.post(annotation_endpoint, json=request)
     elif len(col_list) == 1:
         triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":", True)
         logging.info("Voucher ID for this specimen should be annotated as triplet: ", triplet)
-        write_annotation_to_file(triplet, voucher_id, annotation_writer)
+        request = write_annotation_to_file(triplet, voucher_id, annotation_writer)
+        if send_to_api:
+            requests.post(annotation_endpoint, json=request)
+
     else:
         logging.warning("Too many collection codes to construct triplet" + str(col_list))
         annotation_writer.writerow([voucher_id, "",
@@ -232,6 +237,7 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
 def write_annotation_to_file(triplet, voucher_id, annotation_writer):
     request = get_annotation_request(triplet, voucher_id)
     annotation_writer.writerow([voucher_id, triplet, request])
+    return request
 
 
 def get_annotation_request(triplet, voucher_id):
@@ -249,7 +255,6 @@ def get_annotation_request(triplet, voucher_id):
         "assertionAdditionalInfo": "This assertion was made by the Bio-Sync-Link project, Elixir Biohackathon 2023",
     }
     return str(params)
-    # requests.post(annotation_endpoint, json=params)
 
 
 def remove_institution_from_voucher_id(voucher_id, ena_institution):

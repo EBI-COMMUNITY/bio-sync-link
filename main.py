@@ -12,8 +12,6 @@ import requests
 import tripletManager
 
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
-os.environ['RECORD_LIMIT'] = '10000'
-
 
 def call_ena_api(row):
     uuid = row[22]
@@ -218,10 +216,8 @@ def process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer
     r = False
     if result:
         r = write_result_to_file(writer, row, result)
-        source = "main"
     if not r:
         r = tripletManager.call_ena_api_triplets(row, writer)
-        source = "triplet"
     if r:
         tripletManager.annotate_triplet(r, row, annotation_writer)
 
