@@ -143,7 +143,7 @@ def build_searchable_triplet(row, include_collection):
             collection = collections[0]
     if not collection:
         collection = row[21].replace('"', '').replace('\\N', '')
-    unit = remove_institution_from_voucher_id(row[22].replace('"', '').replace('\\N', ''), institution)
+    unit = remove_redundant_codes_from_voucher_id(row[22].replace('"', '').replace('\\N', ''), [institution, collection])
     return (assemble_triplet(institution, collection, unit, ":", include_collection),
             assemble_triplet(institution, collection, unit, " ", include_collection))
 
@@ -152,7 +152,6 @@ def assemble_triplet(institution, collection, unit, delimiter, include_collectio
     institution = translate_institution(institution.replace('\\N', ''))
     if not institution or not unit:
         return ''
-
     if collection and include_collection:
         return institution + delimiter + collection + delimiter + unit
     return institution + delimiter + unit
@@ -213,15 +212,16 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
     if is_triplet(voucher_id):
         return
     ena_institution = institution_dict.get(ggbn_row[20].replace('"', '').replace('\\N', ''))
-    voucher_id = remove_institution_from_voucher_id(voucher_id, ena_institution)
     col_list = get_collection_codes(ena_institution)
     if not col_list:
+        voucher_id = remove_redundant_codes_from_voucher_id(voucher_id, [ena_institution])
         triplet = assemble_triplet(ena_institution, '', voucher_id, ":", False)
         logging.info("Voucher ID for this specimen should be annotated as triplet: " + triplet)
         request = write_annotation_to_file(triplet, voucher_id, annotation_writer)
         if send_to_api:
             requests.post(annotation_endpoint, json=request)
     elif len(col_list) == 1:
+        voucher_id = remove_redundant_codes_from_voucher_id(voucher_id, [ena_institution, col_list[0]])
         triplet = assemble_triplet(ena_institution, col_list[0], voucher_id, ":", True)
         logging.info("Voucher ID for this specimen should be annotated as triplet: ", triplet)
         request = write_annotation_to_file(triplet, voucher_id, annotation_writer)
@@ -260,10 +260,11 @@ def get_annotation_request(triplet, voucher_id):
     return str(params)
 
 
-def remove_institution_from_voucher_id(voucher_id, ena_institution):
-    pattern = re.escape(
-        ena_institution) + r'[\s\-_]*'  # Match the substring with trailing spaces, hyphens, or underscores
-    return re.sub(pattern, "", voucher_id)
+def remove_redundant_codes_from_voucher_id(voucher_id, codes):
+    for code in codes:
+        pattern = re.escape(code) + r'[\s\-_:]*'  # Match the substring with trailing spaces, hyphens, or underscores
+        voucher_id = re.sub(pattern, "", voucher_id)
+    return voucher_id
 
 
 def is_triplet(ena_voucher):
@@ -301,7 +302,3 @@ def triplet_workflow():
                         annotate_triplet(triplet_match, row, annotation_writer)
                 else:
                     break
-
-
-if __name__ == '__main__':
-    triplet_workflow()
