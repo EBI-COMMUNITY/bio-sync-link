@@ -226,8 +226,11 @@ def annotate_triplet(result, ggbn_row, annotation_writer):
         logging.info("Voucher ID for this specimen should be annotated as triplet: ", triplet)
         request = write_annotation_to_file(triplet, voucher_id, annotation_writer)
         if send_to_api:
-            requests.post(annotation_endpoint, json=request)
-
+            try:
+                # First authenticate
+                requests.post(annotation_endpoint, json=request)
+            except Exception:
+                logging.error("Unable to post annotation to CDCH API")
     else:
         logging.warning("Too many collection codes to construct triplet" + str(col_list))
         annotation_writer.writerow([voucher_id, "",
