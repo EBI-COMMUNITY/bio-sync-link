@@ -167,7 +167,7 @@ def set_institution_dict():
             for row in reader:
                 if not first:
                     k = row[0]
-                    v = row[4]
+                    v = row[6]
                     if k not in institution_dict or (k in institution_dict and institution_dict[k] == '#N/A'):
                         institution_dict[k] = v
                 else:
