@@ -38,3 +38,12 @@ Two CSV files are generated as output. The file **xref_file.csv** contains the m
 6. Run the script: `python run.py`.
 
 In either case, the results will be written into the corresponding CSV files in the outputs folder.
+
+**When using Docker:**
+1. Open the command line.
+2. Navigate to the ENA_GBIF_Mapper folder.
+3. Build the Docker image: `docker build -t xref-gen .`
+4. Bind mount desired output folder. In Docker Desktop, for example, this can be done in the settings under Resources > File Sharing.
+5. Run the Docker image: `docker run -v C:\<PATH_TO_HOST_FOLDER>:/app/output -it -p 4000:80 xref-gen`
+6. After running the image, the results can be found in the host folder that was mounted in step 4 and specified in step 5.
+
