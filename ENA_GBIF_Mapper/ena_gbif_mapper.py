@@ -15,12 +15,12 @@ PARAMS = [
 ]
 
 
-def read_ena_dump_pd(ena_dump_file):
+def read_ena_dump_pd(ena_dump_file: str) -> pd.DataFrame:
     ena_dump = pd.read_csv(ena_dump_file, sep='\t')
     return ena_dump
 
 
-def process(data):
+def process(data: pd.DataFrame) -> None:
     xref_file = load_xref_file()
     found_records_list = list()
     sample_size: int = int(input("Enter sample size: "))
@@ -47,7 +47,7 @@ def process(data):
     xref_file.to_csv('output/xref_file.csv', sep='\t', index=False)
 
 
-def request(parameters):
+def request(parameters: dict) -> dict:
     url = 'https://services.bgbm.org/spase/api/specimen/guid?'
     try:
         # converting dates avoids format issues with SpASe requests
@@ -65,12 +65,12 @@ def request(parameters):
         print(parameters)
 
 
-def load_xref_file():
+def load_xref_file() -> pd.DataFrame:
     xref_file = pd.read_csv('input/Ggbn_ena_template.csv', sep='\t')
     return xref_file
 
 
-def extract_parameters(row):
+def extract_parameters(row: pd.Series) -> dict:
     parameters = dict()
     for col in row.index:
         if col in PARAMS and not pd.isnull(row[col]):

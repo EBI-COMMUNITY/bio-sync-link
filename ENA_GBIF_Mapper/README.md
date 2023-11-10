@@ -19,7 +19,17 @@ Two CSV files are generated as output. The file **xref_file.csv** contains the m
 ### SpASe
 [SpASe](https://services.bgbm.org/spase/api/specimens/file) is a web service developed in the course of the BiCIKL project and consists of an API and a GUI. It was designed to search specimen information systems for a set of parameter values. Further, it evaluates and assesses the similarity of found records compared to the search parameter values and provides it in the form of a similarity score. Besides DiSSCo and iDigBio, it queries GBIF and can thus be used to map ENA accessions to GBIF occurrence records. The web service is described in detail [here](https://docs.google.com/document/d/1vb9JlHm4DK-Z9V6BxnYC2mnsQaqWJLNR/edit?usp=sharing&ouid=112373834655561411383&rtpof=true&sd=true), the source code can be found [here](https://git.bgbm.org/bicikl/wp7-web-service). The allowed input parameters follow the source feature qualifiers defined in the [INSDC Feature Table Specification](https://www.insdc.org/documents/feature-table), which makes SpASE a suitable tool for this task. To perform the mapping, SpASe searches only GBIF, excludes INSDC and BOLD dataset records and returns only records with a similarity score of 1.
 
+### Script workflow
+After starting the script, the user is asked to enter a sample size as an integer. This sample number is used to limit the number of ENA accessions that are mapped to GBIF occurrence records. The sample size is used to randomly select a subset of the input data. If the entered number exceeds the number of records in the input file, the whole input file is used.
+
+The script proceeds by reading the input file **ena_dump** and extracting the ENA accessions. As described, the function `process()` extracts these accessions as a randomised sample. The function iterates then over the sample and requests SpASe for each record. Finally, if the similarity score equals 1 each record and its corresponding mapping is stored. During processing, the script prints the parameters that are currently used for a SpASe query.
+
 ## How to run this script?
+
+**Prerequisites:**
+- Python 3.11
+- Download the TSV input file (a dump from ENA search API), e.g. from [here](https://www.ebi.ac.uk/ena/portal/api/search?result=sequence&query=specimen_voucher=%22*%22&fields=accession,scientific_name,specimen_voucher,country,collected_by,collection_date&format=tsv&limit=1000000, name it **ena_dump** and place it in the ENA_GBIF_Mapper/input folder.
+
 **When using PyCharm:**
 1. Open the project in PyCharm.
 2. Add a new interpreter (File > Settings > Project: bio-sync-link > Project Interpreter > Add) and select the Python 3.11 interpreter.
