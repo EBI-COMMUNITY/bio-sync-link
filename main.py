@@ -9,9 +9,9 @@ import uuid
 import boto3
 
 import requests
+import tripletManager
 
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
-
 
 def call_ena_api(row):
     uuid = row[22]
@@ -123,7 +123,8 @@ def write_result_to_file(writer, row, result):
             'source': result_row['source'],
             'ggbn_unitid': row[22],
             'ena_hit_on': check_hit(result_row),
-            'ggbn_scietific_name': row[23],
+            'ena_specimen_voucher': result_row['specimen_voucher'],
+            'ggbn_scientific_name': row[23],
             'ena_scientific_name': result_row['scientific_name'],
             'ggbn_country': row[8],
             'ena_country': result_row['country'],
@@ -152,6 +153,7 @@ def write_result_to_file(writer, row, result):
             logging.info(f'Skipping row as the type is not accepted {result}')
         else:
             writer.writerow(result)
+            return result
 
 
 def pick_correct_accession_field(result_row):
@@ -176,14 +178,16 @@ def check_hit(result_row):
 def main_method():
     with open('new-full-dump.csv', 'r', encoding='ISO-8859-1') as csvfile:
         datareader = csv.reader(csvfile, delimiter='\t', quotechar='"')
-        with open('output.csv', 'w', newline='') as outputfile:
+        with open('output.csv', 'w', newline='') as outputfile, open('annotationOutput.csv', 'w',
+                                                                     newline='') as annotationoutfile:
             writer = csv.DictWriter(outputfile, delimiter=',', quotechar='"',
-                                    fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on',
-                                                'ggbn_scietific_name',
+                                    fieldnames=['source', 'tax_match', 'ggbn_unitid', 'ena_hit_on', 'ena_specimen_voucher',
+                                                'ggbn_scientific_name',
                                                 'ena_scientific_name', 'ggbn_country', 'ena_country',
                                                 'ggbn_collection_date', 'ena_collection_date', 'ggbn_collector',
                                                 'ena_collector', 'ena_id', 'ggbn_guid', 'ena_api', 'gbbn_type',
                                                 'ggbn_guid', 'ggbn_id'])
+            annotation_writer = csv.writer(annotationoutfile)
             with open('unmatched-accession.csv', 'w', newline='') as unmatched_accession_outputfile:
                 writer_invalid_accession = csv.DictWriter(unmatched_accession_outputfile, delimiter=',', quotechar='"',
                                                           fieldnames=['ggbn_guid', 'ggbn_unitid', 'ggbn_scietific_name',
@@ -191,12 +195,13 @@ def main_method():
                                                                       'ggbn_collector'])
                 # with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
                 writer.writeheader()
+                annotation_writer.writerow(['ena_id', 'triplet', 'annotation'])
                 for i, row in enumerate(datareader):
                     if i == 0:
                         continue
                     elif i < int(os.environ.get('RECORD_LIMIT')):
                         # executor.submit(process_row_in_ggbn, row, writer, writer_invalid_accession)
-                        process_row_in_ggbn(row, writer, writer_invalid_accession)
+                        process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer)
                     else:
                         break
     s3_client = boto3.client('s3',
@@ -206,12 +211,16 @@ def main_method():
     s3_client.upload_file('unmatched-accession.csv', 'ggbn-ena-mapping', f'unmatched-accession-{str(uuid.uuid4())}.csv')
 
 
-def process_row_in_ggbn(row, writer, writer_invalid_accession):
+def process_row_in_ggbn(row, writer, writer_invalid_accession, annotation_writer):
     result = process_row(row, writer_invalid_accession)
+    r = False
     if result:
-        write_result_to_file(writer, row, result)
+        r = write_result_to_file(writer, row, result)
+    if not r:
+        r = tripletManager.call_ena_api_triplets(row, writer)
+    if r:
+        tripletManager.annotate_triplet(r, row, annotation_writer)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main_method()

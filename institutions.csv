@@ -1,0 +1,267 @@
+institutioncode GGBN,collectioncode,Count,GGBN Name,NCBI Inst Name,GRSciColl Inst Name,NCBI inst code,GRSCICOLL URI,NCBI_BIOCOLLECTION,GRSCICOLL Int code,GRSCICOLL coll code,ROR Institution,GRSciColl Inst selfLink,GRSciColl Inst Key
+"University of Guelph, Centre for Biodiversity Genomics",BIOUG,1500515,Centre for Biodiversity Genomics,#N/A,Centre for Biodiversity Genomics,#N/A,http://grscicoll.org/institution/centre-biodiversity-genomics,948693,BIOUG,,https://ror.org/01r7awg59,,0360f257-7121-45f1-8947-14a3600e56af
+"University of Guelph, Centre for Biodiversity Genomics",BIOUG-DNA,1500504,Centre for Biodiversity Genomics,#N/A,Centre for Biodiversity Genomics,#N/A,,948693,,,https://ror.org/01r7awg59,,0360f257-7121-45f1-8947-14a3600e56af
+MSB,Mamm,696719,Arctos,Museum of Southwestern Biology,#N/A,MSB,,944995,,,,#N/A,8827b228-5892-444f-9ce9-f1e1d97ed133
+INRAE,tissue collection,323746,"National Institute of Research for Agriculture, Food and Environment",#N/A,#N/A,INRA,,948676,,,https://ror.org/003vg9w96,#N/A,ae574f13-b367-4088-b9fa-281a270c9833
+ZFMK,TIS,283789,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+UAM,Mamm,257843,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,NONE,,,,#N/A,6f700e1f-03b9-4062-acf8-9d4006a4c48a
+UAM,Ento,172083,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,NONE,,,,#N/A,6f700e1f-03b9-4062-acf8-9d4006a4c48a
+NHMO,DFH,170735,Natural History Museum of Oslo,Natural History Museum of Oslo,University of Oslo (UiO),NHMO,,948637,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+MVZ,Herp,123655,Arctos,"Museum of Vertebrate Zoology, University of California at Berkeley","Museum of Vertebrate Zoology, University of California Berkeley",MVZ,,939768,,,,,59175240-4500-42b9-9e98-42ae299a5e9b
+NHMO,BI,115343,Natural History Museum of Oslo,Natural History Museum of Oslo,University of Oslo (UiO),NHMO,,948637,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+MVZ,Mamm,114533,Arctos,"Museum of Vertebrate Zoology, University of California at Berkeley","Museum of Vertebrate Zoology, University of California Berkeley",MVZ,,939768,,,,,59175240-4500-42b9-9e98-42ae299a5e9b
+OGL,OGL,108062,Ocean Genome Legacy,Ocean Genome Legacy,"Ocean Genome Legacy, Northeastern University",OGL,,948756,,,,,8c116cac-9394-4c4e-be14-06184bdc62bd
+O,DP,98256,Natural History Museum of Oslo,"Botanical Museum, Natural History Museum, Oslo",University of Oslo (UiO),O,,948637,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+MSB,Bird,89380,Arctos,Museum of Southwestern Biology,#N/A,MSB,,944995,,,,#N/A,8827b228-5892-444f-9ce9-f1e1d97ed133
+USNM,IZ,71492,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+MO,MO,56681,Missouri Botanical Garden,Missouri Botanical Garden,Missouri Botanical Garden,MO,,943251,,,https://ror.org/04tzy5g14,,1be3aa67-8f90-4309-92f4-bd55426a8c09
+MVZ,Bird,52187,Arctos,"Museum of Vertebrate Zoology, University of California at Berkeley","Museum of Vertebrate Zoology, University of California Berkeley",MVZ,,939768,,,,,59175240-4500-42b9-9e98-42ae299a5e9b
+UAM,Bird,44934,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,NONE,,,,#N/A,6f700e1f-03b9-4062-acf8-9d4006a4c48a
+NHMUK,BMNH(E),43382,Natural History Museum London,"Natural History Museum, London","Natural History Museum, London",NHMUK,,"940789, 944023",,,,,1d808a7c-1f9e-4379-9616-edb749ecf10e
+NHMO,DMA,40214,Natural History Museum of Oslo,Natural History Museum of Oslo,University of Oslo (UiO),NHMO,,948637,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+ZFMK,DNA Collection,39954,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+US,US,37579,National Museum of Natural History,"Smithsonian Institution, Department of Botany",#N/A,US,,"943321, 942395",,,,#N/A,be5b9c72-e499-42b8-a5dc-c27505cf232e
+NHMD,Tissue collection,37164,Natural History Museum of Denmark,"Zoological Museum, University of Copenhagen",Natural History Museum of Denmark,NHMD,,943846,,,https://ror.org/040ck2b86,,68fcaba0-61fe-4e78-a460-4f37654d025d
+USNM,Fish,36258,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+MSB,Fish,34390,Arctos,Museum of Southwestern Biology,#N/A,MSB,,944995,,,,#N/A,8827b228-5892-444f-9ce9-f1e1d97ed133
+QCAZ,tissue collection,30649,"Museo de Zoología, Pontificia Universidad Católica del Ecuador","Museo de Zoologia, Pontifica Universidad Catolica del Ecuador","Museo de Zoologia, Pontificia Universidad Catolica del Ecuador",QCAZ,,943812,,,,,1f33a2dd-ea62-4da3-b6f3-6fc19d259c99
+QCAZ,zoological collection,30648,"Museo de Zoología, Pontificia Universidad Católica del Ecuador","Museo de Zoologia, Pontifica Universidad Catolica del Ecuador","Museo de Zoologia, Pontificia Universidad Catolica del Ecuador",QCAZ,,943812,,,,,1f33a2dd-ea62-4da3-b6f3-6fc19d259c99
+USNM,Entomology,29180,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+USNM,ENT,28778,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+DMNS,Bird,28236,Arctos,Denver Museum of Nature and Science,Denver Museum of Nature & Science,DMNS,,943519,,,https://ror.org/003zqrx63,,1757f021-01b8-4d20-a11a-1da09db2d8b2
+DMNS,Mamm,27825,Arctos,Denver Museum of Nature and Science,Denver Museum of Nature & Science,DMNS,,943519,,,https://ror.org/003zqrx63,,1757f021-01b8-4d20-a11a-1da09db2d8b2
+USNM,MAMM,24023,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+USNM,Fishes,22832,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+DSMZ,Prokarya,22144,Leibniz Institute DSMZ,Deutsche Sammlung von Mikroorganismen und Zellkulture,Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH,DSMZ,,NONE,,,https://ror.org/02tyer376,,883f3d24-35e9-462d-b7a3-13c2b9b7260e
+ZFMK,GBOL-Coleoptera,20834,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+\N,\N,19973,,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+B,Herbarium Berolinense,17777,Botanic Garden and Botanical Museum Berlin,Herbarium Berolinense,"ZE Botanischer Garten und Botanisches Museum, Freie Universität Berlin",B,http://grscicoll.org/institution/botanischer-garten-und-botanisches-museum-berlin-dahlem-zentraleinrichtung-der-freien,943244,B,B,https://ror.org/00bv4cx53,,4cf93dd2-06c8-4f49-89bc-a5d0805c6747
+B,DNA Bank,17641,Botanic Garden and Botanical Museum Berlin,Herbarium Berolinense,"ZE Botanischer Garten und Botanisches Museum, Freie Universität Berlin",B,,943244,,,https://ror.org/00bv4cx53,,4cf93dd2-06c8-4f49-89bc-a5d0805c6747
+USNM,Invertebrate Zoology,14215,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+USNM,Birds,14070,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+UJ,ACDB,13169,"African Centre for DNA Barcoding, University of Johannesburg",#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+US,Botany,12974,National Museum of Natural History,"Smithsonian Institution, Department of Botany",#N/A,US,,"943321, 942395",,,,#N/A,be5b9c72-e499-42b8-a5dc-c27505cf232e
+NHMO,DAR,12972,Natural History Museum of Oslo,Natural History Museum of Oslo,University of Oslo (UiO),NHMO,,948637,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+DSMZ,DNA Bank,12737,Leibniz Institute DSMZ,Deutsche Sammlung von Mikroorganismen und Zellkulture,Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH,DSMZ,,NONE,,,https://ror.org/02tyer376,,883f3d24-35e9-462d-b7a3-13c2b9b7260e
+IVB,tissue bank,12548,"Institute of Vertebrate Biology, The Czech Academy of Sciences","Institute of Vertebrate Biology, Academy of Sciences of the Czech Republic","Institute of Vertebrate Biology, The Czech Academy of Sciences",IVB,,NONE,,,,,bd94578e-183f-4739-86f3-a1d5096b0ff6
+TCWC,Mammals Tissue,12427,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,943831,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+CORBIDI,Tissue Collection,12285,Centro de Ornitología y Biodiversidad,Centro de Ornitologia y Biodiversidad,Centro de Ornitologia y Biodiversidad,CORBIDI,,NONE,,,https://ror.org/03a5ms192,,e89fcd8f-ea95-41c8-9e7e-aa8e23fe93bd
+HNHM,CGR,11435,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+KU,KUIT,11381,University of Kansas Biodiversity Institute,University of Kansas Natural History Museum,"University of Kansas, Biodiversity Institute and Natural History Museum",KU,,"947911, 943969",,,,,49fb6451-91b7-4af2-8cd3-354539a77589
+MfN,Tissue Collection,11311,Museum für Naturkunde,#N/A,Museum für Naturkunde Berlin - Leibniz-Institut für Evolutions- und Biodiversitätsforschung,#N/A,,948894,,,,,ac439ab0-b80a-43ea-b2c3-bdaeaf0a52bd
+ZFMK,GBOL-Diptera,10978,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+MSB,Para,10959,Arctos,Museum of Southwestern Biology,#N/A,MSB,,944995,,,,#N/A,8827b228-5892-444f-9ce9-f1e1d97ed133
+IAvH,IAvH-CT,9724,Alexander von Humboldt Institute for Research on Biological Resources,Instituto de Ivestigacion de los Recursos Biologicos Alexander von Humboldt,#N/A,IAVH,,,,,,#N/A,#N/A
+USNM,Mammals,9597,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,"940011, 939630",,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+UAM,Fish,8863,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,NONE,,,,#N/A,6f700e1f-03b9-4062-acf8-9d4006a4c48a
+NZAC,NZAC,8640,Manaaki Whenua Landcare Research-New Zealand Arthropod Collection,New Zealand Arthropod Collection,New Zealand Arthropod Collection,NZAC,,945266,,,,,aad13c7e-bdd6-4507-a395-57fb22ab54ae
+Cuni,tissue bank,8035,Charles University in Prague,#N/A,#N/A,#N/A,,,,,https://ror.org/024d6js02,#N/A,#N/A
+MSB,Herp,7372,Arctos,Museum of Southwestern Biology,#N/A,MSB,,944995,,,,#N/A,8827b228-5892-444f-9ce9-f1e1d97ed133
+ZFMK,Tissue Collection,7015,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL collection,6919,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+TCWC,Birds Tissue,6749,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,943831,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+TCWC,Birds,6748,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,943831,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+TCWC,Mammals,6434,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,943831,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+FR,Herbarium Senckenbergianum,6184,Senckenberg Frankfurt and BiK-F,Forschungsinstitut Senckenberg,Senckenberg Gesellschaft für Naturforschung: Senckenberg Forschungsinstitut und Naturmuseum,FR,,948366,,,,,852e9314-11b8-4c11-8378-92fec4a555f1
+USNM,Amphibians and Reptiles,5833,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,,,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+CMN,\N,5746,Canadian Museum of Nature,Canadian Museum of Nature,Canadian Museum of Nature,CMN,,,,,https://ror.org/029ws6035,,c146edb6-3a82-473c-b337-4acaa92f9513
+JBRJ,RBdna,5739,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+\N,Bird,5000,Arctos/Denver Museum of Nature & Science,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+MfN,Mollusc Collection,4847,Museum für Naturkunde,#N/A,Museum für Naturkunde Berlin - Leibniz-Institut für Evolutions- und Biodiversitätsforschung,#N/A,,,,,,,ac439ab0-b80a-43ea-b2c3-bdaeaf0a52bd
+ZFMK,GBOL-Heteroptera,4762,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+USNM,Amphibians & Reptiles,4324,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,,,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+SMNHTAU,Aves,3807,Steinhardt Museum of Natural History,The Steinhardt Museum of Natural History,#N/A,SMNHTAU,,,,,,#N/A,#N/A
+SMNS,Biobank Collection,3791,#N/A,Staatliches Museum fur Naturkunde Stuttgart,Staatliches Museum für Naturkunde Stuttgart,SMNS,,,,,https://ror.org/05k35b119,,57246550-fc3c-4056-a59b-5688a10274bd
+TCWC,Ichthyology Tissue,3760,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+TCWC,Ichthyology,3758,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+B,Diatom Reference Library,3635,Botanic Garden and Botanical Museum Berlin,Herbarium Berolinense,"ZE Botanischer Garten und Botanisches Museum, Freie Universität Berlin",B,,,,,https://ror.org/00bv4cx53,,4cf93dd2-06c8-4f49-89bc-a5d0805c6747
+KU,KUI,3130,University of Kansas Biodiversity Institute,University of Kansas Natural History Museum,"University of Kansas, Biodiversity Institute and Natural History Museum",KU,,,,,,,49fb6451-91b7-4af2-8cd3-354539a77589
+SMNHTAU,Mammalia,3001,Steinhardt Museum of Natural History,The Steinhardt Museum of Natural History,#N/A,SMNHTAU,,,,,,#N/A,#N/A
+DBG,Tissue and DNA Bank,2894,Denver Botanic Gardens,"Sam Mitchel Herbarium of Fungi, Denver Botanic Gardens",Denver Botanic Gardens,DBG,,,,,https://ror.org/01j60q321,,b4f01445-0fd2-4d04-97c1-3c7ba800d8b7
+HNHM,MAM,2832,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+K,DNA Bank,2793,"Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew",K,,,,,https://ror.org/00ynnr806,,fa252605-26f6-426c-9892-94d071c2c77f
+TCWC,Herpetology,2474,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+TCWC,Herpetology Tissue,2474,"Biodiversity Research and Teaching Collections, Texas A&M University",Biodiversity Research and Teaching Collections (formerly the Texas Cooperative Wildlife Collection),Texas Cooperative Wildlife Collection,TCWC,,,,,,,c7558d1a-9bba-4472-89ee-838747869e62
+DSMZ,Fungi,2417,Leibniz Institute DSMZ,Deutsche Sammlung von Mikroorganismen und Zellkulture,Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH,DSMZ,,,,,https://ror.org/02tyer376,,883f3d24-35e9-462d-b7a3-13c2b9b7260e
+ZFMK,Arthropoda Collection,2370,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SMNHTAU,Reptilia,2318,Steinhardt Museum of Natural History,The Steinhardt Museum of Natural History,#N/A,SMNHTAU,,,,,,#N/A,#N/A
+FR,Herbarium Senckenbergianum (FR) - Fungi,2063,Senckenberg Frankfurt and BiK-F,Forschungsinstitut Senckenberg,Senckenberg Gesellschaft für Naturforschung: Senckenberg Forschungsinstitut und Naturmuseum,FR,,,,,,,852e9314-11b8-4c11-8378-92fec4a555f1
+O,DFL,1995,Natural History Museum of Oslo,"Botanical Museum, Natural History Museum, Oslo",University of Oslo (UiO),O,,,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+ZFMK,Ichthyology Collection,1973,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SMNS,Tissue Collection,1968,#N/A,Staatliches Museum fur Naturkunde Stuttgart,Staatliches Museum für Naturkunde Stuttgart,SMNS,,,,,https://ror.org/05k35b119,,57246550-fc3c-4056-a59b-5688a10274bd
+ZFMK,"Astrin, Jonas, Dr.",1760,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Aves,1588,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+JBRJ,RBtecido,1574,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+ZFMK,GBOL-Auchenorrhyncha,1477,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+JBRJ,RB,1462,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+ZFMK,GBOL-Malaise,1389,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+K,Herbarium,1387,"Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew",K,,,,,https://ror.org/00ynnr806,,fa252605-26f6-426c-9892-94d071c2c77f
+ZMH,"Kaiser, Thomas M., Prof. Dr.",1380,#N/A,Zoologisches Museum Hamburg,Zoologisches Museum Hamburg,ZMH,,,,,,,773a0d99-3ea8-4a8b-9191-accbdb47b4d3
+SMF,Collection Porifera,1074,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+ZFMK,GBOL-Myriapoda,1069,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+UNAL,GERPH,1028,Universidad Nacional de Colombia / National University of Colombia,#N/A,Universidad Nacional de Colombia,#N/A,,,,,,,e85150f2-7c38-46c2-9dac-b3a895c0bf6d
+Universidad Nacional de Colombia (UNAL),GERPH-TDB,1028,Universidad Nacional de Colombia / National University of Colombia,#N/A,Universidad Nacional de Colombia,#N/A,,,,,,,e85150f2-7c38-46c2-9dac-b3a895c0bf6d
+MCZ,ICH,1017,#N/A,"Museum of Comparative Zoology, Harvard University","Harvard University, Museum of Comparative Zoology",MCZ,,,,,,,1cfca87c-083e-4d67-8e60-cb7d311f6058
+DMNS,Para,989,Arctos,Denver Museum of Nature and Science,Denver Museum of Nature & Science,DMNS,,,,,https://ror.org/003zqrx63,,1757f021-01b8-4d20-a11a-1da09db2d8b2
+ZFMK,GBOL-Mammalia,979,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Arachnida,933,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Crustacea,827,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+NHMD,DNA and tissue collection,814,Natural History Museum of Denmark,"Zoological Museum, University of Copenhagen",Natural History Museum of Denmark,NHMD,,,,,https://ror.org/040ck2b86,,68fcaba0-61fe-4e78-a460-4f37654d025d
+AWI,Diatoms,805,Botanic Garden and Botanical Museum Berlin,#N/A,#N/A,#N/A,,,,,https://ror.org/00bv4cx53,#N/A,#N/A
+SMNHTAU,Pisces,792,Steinhardt Museum of Natural History,The Steinhardt Museum of Natural History,#N/A,SMNHTAU,,,,,,#N/A,#N/A
+ZFMK,GGBC-Diptera,792,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SMNG,Biobank Collection,697,#N/A,Senckenberg Museum fuer Naturkunde Goerlitz,Senckenberg Museum fuer Naturkunde Goerlitz,SMNG,,,,,,,162d6c65-20ae-49f5-8ad0-d7e9f91939b3
+HNHM,MOL,674,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,GBOL-Pisces,659,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SAIAB,FC,525,#N/A,South African Institute of Aquatic Biodiversity,South African Institute for Aquatic Biodiversity,SAIAB,,,,,,,a90ba963-9569-4b96-8d56-452aa7b83f75
+ZFMK,GBOL-Hymenoptera general,516,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,Björn Rulik,509,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Arachnida,457,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+NHMO,DOT,433,Natural History Museum of Oslo,Natural History Museum of Oslo,University of Oslo (UiO),NHMO,,,,,,,a9ab29d6-f380-4193-967f-15a64abc09e7
+C,Herbarium Hauniense,406,Natural History Museum of Denmark,Natural History Museum of Denmark,University of Copenhagen,C,,,,,https://ror.org/040ck2b86,,1a69e6fc-4a8d-44d5-90a6-a7dc7a1aa7c7
+B,Diatoms,362,Botanic Garden and Botanical Museum Berlin,Herbarium Berolinense,"ZE Botanischer Garten und Botanisches Museum, Freie Universität Berlin",B,,,,,https://ror.org/00bv4cx53,,4cf93dd2-06c8-4f49-89bc-a5d0805c6747
+JBRJ,RBv,342,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+CAS,ICH,327,#N/A,California Academy of Sciences,California Academy of Sciences,CAS,,,,,,,d2a27206-87ab-47ea-b5fc-d2e57054b688
+ZFMK,Mammalia Collection,321,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+UAM,Herp,312,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,,,,,#N/A,#N/A
+ZFMK,GGBC-Coleoptera,288,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+TBG,TBG,275,Tooro Botanical Gardens,#N/A,Tsukuba Botanical Garden,#N/A,,,,,,,ad0c7361-8344-402c-8e10-6b23f97f396e
+NYBG,DNA Bank,274,New York Botanical Garden,New York Botanical Garden,New York Botanical Garden,NYBG,,,,,https://ror.org/03tv88982,,5d52ccb0-f298-4d43-a9c8-b77630c0072f
+HNHM,MYC,271,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+UAM,Herb,256,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,,,,,#N/A,#N/A
+DMNS,Herp,252,Arctos,Denver Museum of Nature and Science,Denver Museum of Nature & Science,DMNS,,,,,https://ror.org/003zqrx63,,1757f021-01b8-4d20-a11a-1da09db2d8b2
+NY,Herbarium,249,New York Botanical Garden,New York Botanical Garden,The New York Botanical Garden,NY,,,,,https://ror.org/03tv88982,,ab83e5ab-f4f7-4c9b-a1d5-eb779dfb9377
+ZFMK,GGBC-Heteroptera,239,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+HNT,Tissue Collection,208,The Huntington,Huntington Botanical Gardens,"The Huntington Library, Art Museum, and Botanical Gardens",HNT,,,,,https://ror.org/05dv1j335,,906b29ab-11b5-4b44-a649-15c39683d3da
+HNT,Herbarium,204,The Huntington,Huntington Botanical Gardens,"The Huntington Library, Art Museum, and Botanical Gardens",HNT,,,,,https://ror.org/05dv1j335,,906b29ab-11b5-4b44-a649-15c39683d3da
+HBG,LivingCollections,202,The Huntington,Institute for Plant Science and Microbiology,University of Hamburg,HBG,,,,,https://ror.org/05dv1j335,,c8de5070-fbbb-40a6-91c6-8021e0a674c6
+ZFMK,GGBC-Myriapoda,195,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+HNHM,TRA,185,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,GBOL3-Diptera,170,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SMNHTAU,Amphibia,168,Steinhardt Museum of Natural History,The Steinhardt Museum of Natural History,#N/A,SMNHTAU,,,,,,#N/A,#N/A
+HNHM,BRY,165,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+BMNH(E),DNA Bank,160,Natural History Museum London,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+BMNH(E),Invertebrates,160,Natural History Museum London,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+ZFMK,GBOL-Trichoptera,156,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,No collection,152,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+SMNG,Tissue Collection,133,#N/A,Senckenberg Museum fuer Naturkunde Goerlitz,Senckenberg Museum fuer Naturkunde Goerlitz,SMNG,,,,,,,162d6c65-20ae-49f5-8ad0-d7e9f91939b3
+NHMUK,ZOO,127,Natural History Museum London,"Natural History Museum, London","Natural History Museum, London",NHMUK,,,,,,,1d808a7c-1f9e-4379-9616-edb749ecf10e
+SMF,Collection Polychaeta,120,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+UAM,ES,117,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,,,,,#N/A,#N/A
+ZFMK,"Huber, Bernhard, Dr.",117,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Trichoptera,113,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+JNTBGRI,Tissues,92,Jawaharlal Nehru Tropical Botanic Garden and Research Institute,#N/A,#N/A,#N/A,,,,,https://ror.org/05w47ap08,#N/A,#N/A
+LAGU,Herbarium LAGU,87,#N/A,"Asociacion Jardin Botanico La Laguna, Urbanizacion Plan de La Laguna",Asociación Jardín Botánico La Laguna,LAGU,,,,,,,28f3c312-13ee-41c6-915a-085a53261c21
+ZFMK,GGBC-Ephemeroptera,86,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+Fundação Oswaldo Cruz (Fiocruz),COLPROT,84,FIOCRUZ/Protozoa Collection,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+GLM,Herbarium Senckenbergianum (GLM) - Lichenes,80,Senckenberg Frankfurt and BiK-F,Staatliches Museum fuer Naturkunde Goerlitz,Senckenberg Gesellschaft für Naturforschung: Senckenberg Museum für Naturkunde Görlitz,GLM,,,,,,,40a1aba3-3090-4406-8422-de3905092591
+HNHM,HER,79,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,Gewebebank,79,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Hymenoptera: Formicidae,76,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+HNHM,PED-CHILO,75,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,GGBC-Lepidoptera,75,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ROS,Diatoms,72,Botanic Garden and Botanical Museum Berlin,#N/A,#N/A,#N/A,,,,,https://ror.org/00bv4cx53,#N/A,#N/A
+ZFMK,"Decher, Jan, Dr.",71,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Hymenoptera,66,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Pisces,66,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+BioCon,Fish,56,#N/A,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+ZFMK,GBOL-Reptilia,56,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Mecoptera,54,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Odonata,52,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+C,Botanic Garden Copenhagen,51,Natural History Museum of Denmark,Natural History Museum of Denmark,University of Copenhagen,C,,,,,https://ror.org/040ck2b86,,1a69e6fc-4a8d-44d5-90a6-a7dc7a1aa7c7
+ZFMK,Myriapoda Collection,51,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+AM,Ichthyology,44,Australian Museum,Australian Museum,Australian Museum,AM,,,,,,,9cfe8cbf-35ff-4d93-b932-cb05d91b7922
+ZFMK,GBOL-Amphibia,41,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Mollusca,41,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+BGBM,AlgaTerra,40,#N/A,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+NSMT,P,40,#N/A,"National Museum of Nature and Science, Tokyo",National Science Museum (Natural History),NSMT,,,,,,,d08b12cb-dc48-4de3-b08a-47ea57591abe
+LACM,Fish,38,Natural History Museum of Los Angeles County,Natural History Museum of Los Angeles County,Natural History Museum of Los Angeles County,LACM,,,,,https://ror.org/00p9h0053,,2fc908ba-e775-49e2-bffe-6b9041c3b70f
+UAM,Inv,38,Arctos,"University of Alaska, Museum of the North",#N/A,UAM,,,,,,#N/A,#N/A
+ZFMK,GBOL-Lepidoptera,38,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Mollusca,38,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Auchenorrhyncha,37,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Annelida,36,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,948646,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+UWFC,ADULT COLLECTION,32,#N/A,University of Washington Burke Museum Fish,"University of Washington, Burke Museum",UWFC,,,,,,,f93c8044-ccc4-4ed2-b8b2-03df238b7be1
+W,Herbarium W,31,#N/A,"Naturhistorisches Museum Wien, Department of Botany",Naturhistorisches Museum Wien,W,,,,,,,37a95137-fb12-4e75-b35c-ffc6e5af94f9
+ZFMK,Section Biobank,30,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Neuroptera,29,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Orthoptera,28,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Tardigrada,26,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+HNHM,PED-CHILOPR,25,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+JBRJ,RBvc,25,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+SMF,Herbarium Senckenbergianum (FR) - Protista,24,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+ZFMK,Biobank Collection,23,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+CNGB,cell culture collection,22,China National GeneBank,#N/A,#N/A,#N/A,,,,,https://ror.org/03n9hr695,#N/A,#N/A
+LSUMZ,birdsTissues,22,#N/A,"Louisiana State University, Musuem of Zoology","Louisiana State University, Musuem of Zoology",LSUMZ,,,,,,,07bba8b3-fc1d-4983-b9de-39c13d9d1232
+UA,UAIC,21,#N/A,#N/A,University of Alabama,#N/A,,,,,,,1679d024-9c39-4eb2-a0e5-42ad4ac31252
+ZFMK,GGBC-Entognatha,21,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Orthoptera,21,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+K,Spirit Collection,20,"Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew","Royal Botanic Gardens, Kew",K,,,,,https://ror.org/00ynnr806,,fa252605-26f6-426c-9892-94d071c2c77f
+HNT,DNA Bank,18,The Huntington,Huntington Botanical Gardens,"The Huntington Library, Art Museum, and Botanical Gardens",HNT,,,,,https://ror.org/05dv1j335,,906b29ab-11b5-4b44-a649-15c39683d3da
+HBG,TissueCollection,16,The Huntington,Institute for Plant Science and Microbiology,University of Hamburg,HBG,,,,,https://ror.org/05dv1j335,,c8de5070-fbbb-40a6-91c6-8021e0a674c6
+HNHM,PED-COLL,16,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,GBOL-Archaeognatha,16,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+USNM,HERP,15,National Museum of Natural History,"National Museum of Natural History, Smithsonian Institution","Smithsonian Institution, National Museum of Natural History",USNM,,,,,,,586ee56e-b0fe-4dff-b7f9-aeb104f3308a
+JBRJ,RBvo,14,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+ZFMK,GBOL-Dictyoptera,13,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ROM,Fishes,12,Royal Ontario Museum,Royal Ontario Museum,Royal Ontario Museum,ROM,,,,,https://ror.org/00vcj2z66,,9384011e-4d9b-4488-a5dd-5cb67a3c17f7
+ZFMK,GBOL-Plathelminthes,12,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Crustacea,12,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Mecoptera,12,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+BPBM,I,11,Bernice Pauahi Bishop Museum,Bernice P. Bishop Museum,Bernice Pauahi Bishop Museum,BPBM,,,,,https://ror.org/04m60en37,,fdee1b94-e933-4a6e-9a85-05cc39a085a6
+KHD,vascular plants,11,Denver Botanic Gardens,"Kathryn Kalmbach Herbarium of Vascular Plants, Denver Botanic Gardens",Denver Botanic Gardens,KHD,,,,,https://ror.org/01j60q321,,b4f01445-0fd2-4d04-97c1-3c7ba800d8b7
+ZFMK,GBOL-Entognatha,11,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Sternorrhyncha,11,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Dermaptera,10,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Ephemeroptera,9,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+HNHM,COL,8,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+SAIAB,FO,8,#N/A,South African Institute of Aquatic Biodiversity,South African Institute for Aquatic Biodiversity,SAIAB,,,,,,,a90ba963-9569-4b96-8d56-452aa7b83f75
+SMF,Collection Mammalia,8,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+VIMS,VIMS,8,#N/A,Virginia Institute of Marine Science,Virginia Institute of Marine Science,VIMS,,,,,https://ror.org/04eeqc889,,03148e66-1120-4078-9b64-e41138286696
+YPM,VZ,8,#N/A,Yale Peabody Museum of Natural History,Peabody Museum of Natural History,YPM,,,,,,,75f50140-830d-4630-a290-3d6e951a7c29
+HNHM,ICH,7,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+ZFMK,GBOL-INRES,7,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+FMNH,Birds,6,#N/A,Field Museum of Natural History,Field Museum of Natural History,FMNH,,,,,https://ror.org/00mh9zx15,,e71f36f1-e271-4720-a604-3c5a1418e7aa
+INRAE,COLISA,6,"National Institute of Research for Agriculture, Food and Environment",#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+SIO,Marine Vertebrates,6,#N/A,Scripps Institution of Oceanography,Scripps Institution of Oceanography,SIO,,,,,https://ror.org/04v7hvq31,,e14c227d-2864-4d0b-b555-e4933af0c69b
+ZFMK,GGBC-Neuroptera,6,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Reptilia,6,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+\N,BIOUG-DNA,5,Arctos/Denver Museum of Nature & Science,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+JBRJ,RBcarpo,5,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+UWBM,Bird,5,#N/A,"University of Washington, Burke Museum","University of Washington, Burke Museum",UWBM,,,,,,,f93c8044-ccc4-4ed2-b8b2-03df238b7be1
+ZFMK,GBOL-Plecoptera,5,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+Zoological Museum of Moscow University,BIOUG-DNA,5,Centre for Biodiversity Genomics,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+MQU,Fishes,4,#N/A,Macquarie University,#N/A,MQU,,,,,https://ror.org/01sf06y89,#N/A,#N/A
+SMF,Collection Crustacea,4,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+SMF,Collection Pisces,4,Senckenberg Frankfurt and BiK-F,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+ZFMK,GBOL-Zygentoma,4,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL3-Hymenoptera,4,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Psocoptera,4,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,"Niethammer, J.",4,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,Reptilia Collection,4,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Nemathelminthes,3,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Porifera,3,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Plecoptera,3,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,DNA-Bank Collection,2,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Rhaphidioptera,2,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Nemertini,2,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Thysanoptera,2,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,"Rulik, B.,",2,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+B,17264,1,Botanic Garden and Botanical Museum Berlin,Herbarium Berolinense,"ZE Botanischer Garten und Botanisches Museum, Freie Universität Berlin",B,,,,,https://ror.org/00bv4cx53,,4cf93dd2-06c8-4f49-89bc-a5d0805c6747
+BAMZ,Fish,1,#N/A,#N/A,"Bermuda Aquarium, Museum and Zoo",#N/A,,,,,,,388408eb-f8da-4a37-8644-1b9b88b62b81
+"Canadian National Collection of Insects, Arachnids and Nematodes",BIOUG-DNA,1,Centre for Biodiversity Genomics,#N/A,#N/A,#N/A,,,,,,#N/A,#N/A
+CAS,ORN,1,#N/A,California Academy of Sciences,California Academy of Sciences,CAS,,,,,,,d2a27206-87ab-47ea-b5fc-d2e57054b688
+FMNH,Fishes,1,#N/A,Field Museum of Natural History,Field Museum of Natural History,FMNH,,,,,https://ror.org/00mh9zx15,,e71f36f1-e271-4720-a604-3c5a1418e7aa
+HM,CGR,1,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+HNHM,PED-ISO,1,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+HNHM,PED-OPI,1,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+HNHM,PED-PAL,1,Hungarian Natural History Museum,#N/A,#N/A,#N/A,,,,,https://ror.org/04y1zat75,#N/A,#N/A
+JBRJ,RBvb,1,Rio de Janeiro Botanical Garden,#N/A,Jardim Botânico do Rio de Janeiro,#N/A,,,,,https://ror.org/033xtdz52,,48b29504-e1ac-432c-a0d6-f09f46023207
+SMNS,Arthropoda Collection,1,#N/A,Staatliches Museum fur Naturkunde Stuttgart,Staatliches Museum für Naturkunde Stuttgart,SMNS,,,,,https://ror.org/05k35b119,,57246550-fc3c-4056-a59b-5688a10274bd
+ZFMK,Amphibia Collection,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Mantodea,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GBOL-Megaloptera,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Amphibia,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Aves,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,GGBC-Dermaptera,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
+ZFMK,Section Arthropoda,1,Leibniz Institute for the Analysis of Biodiversity Change,Zoologisches Forschungsmuseum Alexander Koenig,Zoologisches Forschungsmuseum Alexander Koenig,ZFMK,,,,,https://ror.org/03k5bhd83,,07d2dd65-80b8-4402-bf51-b55809c85f87
