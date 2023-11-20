@@ -4,7 +4,7 @@ FROM python:3.11-slim
 # set the working directory in the container
 WORKDIR /code
 
-COPY full-ggbn.csv .
+COPY new-full-dump.csv .
 
 # Create new user with UID
 RUN adduser --disabled-password --gecos '' --system --uid 1001 python && chown -R python /code

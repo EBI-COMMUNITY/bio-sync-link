@@ -12,6 +12,7 @@ institution_dict = {}
 logging.basicConfig(format='%(asctime)s - %(threadName)s - %(message)s', level=logging.INFO)
 send_to_api = False
 
+
 def call_ena_api_triplets(row, writer):
     endpoint = 'sequence'
     results = search_triplets(row, endpoint)
@@ -38,7 +39,6 @@ def search_triplets(row, endpoint):
         col_doublet, space_doublet = build_searchable_triplet(row, False)
         if col_doublet and validate_triplet(col_doublet):
             logging.info("No match with accession/uuid found. checking triplet " + col_doublet)
-            results = None
             try:
                 results = requests.get(build_ena_request(col_doublet, space_doublet, endpoint)).json()
             except Exception:
@@ -143,7 +143,8 @@ def build_searchable_triplet(row, include_collection):
             collection = collections[0]
     if not collection:
         collection = row[21].replace('"', '').replace('\\N', '')
-    unit = remove_redundant_codes_from_voucher_id(row[22].replace('"', '').replace('\\N', ''), [institution, collection])
+    unit = remove_redundant_codes_from_voucher_id(row[22].replace('"', '').replace('\\N', ''),
+                                                  [institution, collection])
     return (assemble_triplet(institution, collection, unit, ":", include_collection),
             assemble_triplet(institution, collection, unit, " ", include_collection))
 
