@@ -2,6 +2,8 @@
 from dateutil.parser import parse
 import re
 import requests as requests
+import csv
+import random
 
 # 3rd party
 import pandas as pd
@@ -15,36 +17,44 @@ PARAMS = [
 ]
 
 
-def read_ena_dump_pd(ena_dump_file: str) -> pd.DataFrame:
-    ena_dump = pd.read_csv(ena_dump_file, sep='\t')
-    return ena_dump
+def count_lines(file: str) -> int:
+    with open(file, 'rb') as f:
+        num_lines = sum(1 for _ in f) - 1
+    return num_lines
 
 
-def process(data: pd.DataFrame) -> None:
-    xref_file = load_xref_file()
+def process(file_path: str, sample_size: int) -> None:
     found_records_list = list()
-    sample_size: int = int(input("Enter sample size: "))
-    if sample_size > len(data):
-        print("Sample size is larger than data size. Using data size instead.")
-        sample_size = len(data)
-    else:
-        print("Using sample size of ", sample_size)
-    for index, row in data.sample(sample_size).iterrows():
-        parameters = extract_parameters(row)
+    number_of_lines = count_lines(file_path)
+    clear_file('output/xref_file.csv', 1)
+    clear_file('output/found_records.csv', 1)
+    with open(file_path, 'r') as f:
         try:
-            found_records = request(parameters)
-            for found_record in found_records['result']:
-                if found_record['score'] == 1:
-                    found_records_list.append({'accession': row['accession'], **found_record})
-                    xref_entry = {'SOURCE_PRIMARY_ID': found_record['sourceURL'].replace(
-                        'https://api.gbif.org/v1/occurrence/', ''), 'TARGET_PRIMARY_ACC': row['accession']}
-                    xref_file.loc[len(xref_file)] = xref_entry
+            random_numbers = set(random.sample(range(2, number_of_lines + 1), sample_size))
+            reader = csv.reader(f, delimiter='\t')
+            header = next(reader)
+            for row in reader:
+                if reader.line_num in random_numbers:
+                    parameters = dict()
+                    parameters = extract_parameters(pd.Series(row, index=header))
+                    found_records = request(parameters)
+                    for found_record in found_records['result']:
+                        if found_record['score'] == 1:
+                            found_record = {'accession': row[0], **found_record}
+                            found_records_list.append({'accession': row[0], **found_record})
+                            xref_entry = {'SOURCE_PRIMARY_ID': found_record['sourceURL'].replace(
+                                'https://api.gbif.org/v1/occurrence/', ''), 'SOURCE_SECONDARY_ID': '',
+                                'TARGET_PRIMARY_ACC': row[0], 'TARGET_SECONDARY_ACC': ''}
+                            with open('output/xref_file.csv', 'a', newline='') as xref_file:
+                                writer = csv.DictWriter(xref_file, fieldnames=xref_entry.keys(), delimiter='\t')
+                                writer.writerow(xref_entry)
+                            with open('output/found_records.csv', 'a', newline='') as found_records_file:
+                                writer = csv.DictWriter(found_records_file, fieldnames=found_record.keys(),
+                                                        delimiter='\t')
+                                writer.writerow(found_record)
         except Exception as e:
             print(e)
-            print(parameters)
-    found_records_df = pd.DataFrame(found_records_list)
-    found_records_df.to_csv('output/found_records.csv', sep='\t', index=False)
-    xref_file.to_csv('output/xref_file.csv', sep='\t', index=False)
+            print(parameters) if 'parameters' in locals() else print('parameters not defined')
 
 
 def request(parameters: dict) -> dict:
@@ -57,7 +67,7 @@ def request(parameters: dict) -> dict:
             elif re.match(r'^\d{2}-[A-Z][a-z|A-Z]{2}-\d{4}$', parameters['collection_date']):
                 parameters['collection_date'] = parse(parameters['collection_date']).strftime('%Y-%m-%d')
         print(parameters)
-        r = requests.get(url, params={**{'exactMatch': 'true', 'quickSearch':'true', 'gbifOnly': 'true'},
+        r = requests.get(url, params={**{'exactMatch': 'true', 'quickSearch': 'true', 'gbifOnly': 'true'},
                                       **parameters})
         return r.json()
     except Exception as e:
@@ -65,15 +75,17 @@ def request(parameters: dict) -> dict:
         print(parameters)
 
 
-def load_xref_file() -> pd.DataFrame:
-    xref_file = pd.read_csv('input/Ggbn_ena_template.csv', sep='\t')
-    return xref_file
+def clear_file(file_path: str, start_line: int) -> None:
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    with open(file_path, 'w') as f:
+        f.writelines(lines[:start_line])
 
 
 def extract_parameters(row: pd.Series) -> dict:
     parameters = dict()
     for col in row.index:
-        if col in PARAMS and not pd.isnull(row[col]):
+        if col in PARAMS and row[col] != "":
             if col == 'scientific_name':
                 parameters['organism'] = row[col]
             else:

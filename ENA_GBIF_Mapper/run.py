@@ -5,9 +5,8 @@ import ena_gbif_mapper as egm
 
 
 if __name__ == "__main__":
-    # create a df with test data
-    df = egm.read_ena_dump_pd('input/ena_dump')
+    sample_size: int = int(input("Enter sample size: "))
     start = time.time()
-    res = egm.process(df)
+    egm.process('input/ena_dump', sample_size)
     end = time.time()
     print("Time elapsed: ", end - start)
